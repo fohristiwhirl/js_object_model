@@ -1,8 +1,6 @@
 ```python
 
-
 # In Python...
-
 
 class JS_Object:
 
