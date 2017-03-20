@@ -15,6 +15,9 @@ class JS_Object:
 
     def __getattribute__(self, key):
 
+        if type(key) == float and int(key) == key:
+            key = int(key)
+
         key = str(key)
 
         try:
@@ -28,6 +31,9 @@ class JS_Object:
                 return prototype[key]
 
     def __setattr__(self, key, val):
+
+        if type(key) == float and int(key) == key:
+            key = int(key)
 
         key = str(key)
 
