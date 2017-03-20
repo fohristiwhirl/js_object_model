@@ -62,7 +62,7 @@ class JS_Array (JS_Object):     # FIXME: handle the magical "length" property; a
             try:
                 as_float = float(key)
                 as_int = int(as_float)
-                if as_float == as_int:      # A string like "4.0" returns 4 (int)
+                if as_float == as_int:      # A string like "4.0" returns 4 (int)       -- FIXME! This doesn't match JS
                     return as_int
                 else:                       # A string like "4.5" returns "4.5" (string)
                     return key
@@ -108,5 +108,6 @@ class JS_Array (JS_Object):     # FIXME: handle the magical "length" property; a
         else:
 
             super().__setattr__(key, val)             # super() is the Python super, not the JS prototype
+
 
 ```
