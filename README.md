@@ -23,7 +23,7 @@ class JS_Object:
         except KeyError:
             prototype = object.__getattribute__(self, "prototype")
             if prototype == None:
-                return None
+                return None                     # Strictly, should return some "undefined" object
             return prototype[key]
 
     def __setattr__(self, key, val):
