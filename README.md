@@ -42,23 +42,23 @@ class JS_Object:
         return object.__getattribute__(self, "__setattr__")(key, val)
 
 
-foo = JS_Object()
+if __name__ == "__main__":
+    foo = JS_Object()
+    foo.a = 1
+    foo["b"] = 2
+    foo.c = 3
+    foo["d"] = 4
 
-foo.a = 1
-foo["b"] = 2
-foo.c = 3
-foo["d"] = 4
+    bar = JS_Object(foo)
+    bar.c = 300
 
-bar = JS_Object(foo)
-bar.c = 300
+    print(foo.a)
+    print(foo.b)
+    print(foo["c"])
+    print(foo["d"])
 
-print(foo.a)
-print(foo.b)
-print(foo["c"])
-print(foo["d"])
-
-print(bar.a)
-print(bar.b)
-print(bar["c"])
-print(bar["d"])
+    print(bar.a)
+    print(bar.b)
+    print(bar["c"])
+    print(bar["d"])
 ```
