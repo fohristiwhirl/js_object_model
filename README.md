@@ -1,5 +1,6 @@
 ```python
 
+
 # In Python...
 
 
@@ -47,8 +48,8 @@ class JS_Object:
 
 class JS_Array (JS_Object):     # FIXME: handle the magical "length" property; add .push()
 
-    @classmethod
-    def actualkey(self, key):   # Return an int if we should access the array, otherwise return a string
+    @staticmethod
+    def actualkey(key):         # Return an int if we should access the array, otherwise return a string
 
         if type(key) is int:
             return key
